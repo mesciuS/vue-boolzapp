@@ -13,9 +13,8 @@
 
 <body>
 
-    <div id="main-container">
+    <div id="app" class="main-container">
         <div class="main">
-
             <div class="mainleft">
                 <div class="header">
                     <div class="my-img">
@@ -41,7 +40,17 @@
                     <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-list">
-                    
+                    <div class="chat-wrapper">
+                        <div class="chat-img">
+                            <img src="" alt="">
+                        </div>
+                        <div v-for="nome in contacts" class="chat-text">
+                            {{contacts[index].name}}
+                        </div>
+                    </div>
+                    <div class="chat-time">
+
+                    </div>
                 </div>
             </div>
             <div class="mainright">
@@ -52,7 +61,7 @@
 
     </div>
 
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
