@@ -19,6 +19,7 @@
                 <div class="left-header">
                     <div class="my-img">
                         <img src="img/avatar_io.jpg" alt="">
+                        <h3>Sofia</h3>
                     </div>
                     <ul class="left-icons">
                         <li><i class="fa-solid fa-circle-notch"></i></li>
@@ -26,57 +27,43 @@
                         <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                     </ul>
                 </div>
-                <div class="notifications">
+                <div class="notifications" :class="{'remove': isRemoved}">
                     <div class="notifications-icon">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
                     <div class="notifications-text">
                         <strong>Ricevi notifiche di nuovi messaggi</strong>
-                        <u>Attiva notifiche desktop</u>
+                        <u @click="removeNotification()">Attiva notifiche desktop</u>
                     </div>
                 </div>
                 <div class="search">
                     <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
                 </div>
-                <div class="chat-item active">
-                    <div class="chat-wrapper">
-                        <div class="chat-img">
-                            <img src="img/avatar_1.jpg" alt="">
+                    <div v-for="(contact, index) in contacts" @click="changeActiveIndex(index)" class="chat-item" :class="index == activeIndex ? 'active' : ''">
+                        <div class="chat-wrapper">
+                            <div class="chat-img">
+                                <img :src="contact.avatar" alt="">
+                            </div>
+                            <div class="chat-text">
+                                <strong>{{contact.name}}</strong>
+                                <p>Ultimo mess inviato</p>
+                            </div>
                         </div>
-                        <div class="chat-text">
-                            <strong>Michele</strong>
-                            <p>Ultimo mess inviato</p>
-                        </div>
-                    </div>
-                    <div class="chat-time">
-                        <p>12:00</p>
-                    </div>
-                </div>
-                <div class="chat-item">
-                    <div class="chat-wrapper">
-                        <div class="chat-img">
-                            <img src="img/avatar_2.jpg" alt="">
-                        </div>
-                        <div class="chat-text">
-                            <strong>Fabio</strong>
-                            <p>Ultimo mess inviato</p>
+                        <div class="chat-time">
+                            <p>12:00</p>
                         </div>
                     </div>
-                    <div class="chat-time">
-                        <p>12:00</p>
-                    </div>
-                </div>
             </div>
             <div class="mainright">
                 <div class="right-header">
                     <div class="chat-wrapper">
                         <div class="chat-img">
-                            <img src="img/avatar_1.jpg" alt="">
+                            <img :src="contacts[activeIndex].avatar" alt="">
                         </div>
                         <div class="chat-text">
-                            <strong>Michele</strong>
-                            <p>Ultimo accesso oggi alle 12:00</p>
+                            <strong>{{contacts[activeIndex].name}}</strong>
+                            <p>{{contacts[activeIndex].lastAccess}}</p>
                         </div>
                     </div>
                     <ul class="right-icons">
@@ -86,6 +73,12 @@
                     </ul>
                 </div>
                 <div class="main-chat">
+                    <div v-for="messageSent in contacts[activeIndex].messages" class="message" :class="messageSent.status">
+                        {{messageSent.message}}
+                        <div class="msg-time">
+                            {{messageSent.date}}
+                        </div> 
+                    </div>
 
                 </div>
                 <div class="chat-input">
