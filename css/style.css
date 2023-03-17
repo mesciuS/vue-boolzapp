@@ -98,7 +98,7 @@
     cursor: pointer;
 }
 
-.remove {
+.mainleft .notifications.remove {
     display: none;
 }
 
