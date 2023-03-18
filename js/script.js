@@ -184,7 +184,7 @@ createApp({
         
         // nuovo messaggio 
         newMessage: '',
-        
+
     }   
 },
 
@@ -208,7 +208,7 @@ methods: {
             
             if(this.newMessage == '') {
                 
-                return false;
+                // return false;
                 
             } else {
                 
@@ -230,13 +230,18 @@ methods: {
                     status: 'received',
                 }
                 
+                
                 this.contacts[0].messages.push(response);
 
                 
             }, 1000);
         },
         
-        
+        // filteredList() {
+        //     return contacts.name.filter((contact) =>
+        //     contact.toLowercase().includes(input.value.toLowercase())
+        //     );
+        // }
     }
     
 }).mount('#app')
