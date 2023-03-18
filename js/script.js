@@ -220,18 +220,20 @@ methods: {
         },
         
         
-        addResponse(risposta) {
+        addResponse() {
             
-            const response = {
-                date: '10/01/2020 15:50:01',
-                message: 'OK!',
-                status: 'received',
-            }
-            
-            this.contacts[0].messages.push(response);
-            
-            // clearInterval(this.timer);
-            setInterval(risposta, 2000);
+            setTimeout(() => {
+
+                const response = {
+                    date: '10/01/2020 15:50:01',
+                    message: 'OK!',
+                    status: 'received',
+                }
+                
+                this.contacts[0].messages.push(response);
+
+                
+            }, 1000);
         },
         
         
