@@ -38,9 +38,9 @@
                 </div>
                 <div class="search">
                     <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="searchValue" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
-                    <div v-for="(contact, index) in contacts" @click="changeActiveIndex(index)" class="chat-item" :class="index == activeIndex ? 'active' : ''">
+                    <div v-for="(contact, index) in userList" @click="changeActiveIndex(index)" class="chat-item" :class="index == activeIndex ? 'active' : ''">
                         <div class="chat-wrapper">
                             <div class="chat-img">
                                 <img :src="contact.avatar" alt="">

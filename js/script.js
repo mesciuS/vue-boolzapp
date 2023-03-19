@@ -184,7 +184,7 @@ createApp({
         
         // nuovo messaggio 
         newMessage: '',
-
+        searchValue: '',
     }   
 },
 
@@ -212,7 +212,7 @@ methods: {
                 
             } else {
                 
-                this.contacts[0].messages.push(pushText)
+                this.contacts[this.activeIndex].messages.push(pushText)
                 
                 this.newMessage = '';   
             }
@@ -231,7 +231,7 @@ methods: {
                 }
                 
                 
-                this.contacts[0].messages.push(response);
+                this.contacts[this.activeIndex].messages.push(response);
 
                 
             }, 1000);
@@ -242,6 +242,15 @@ methods: {
         //     contact.toLowercase().includes(input.value.toLowercase())
         //     );
         // }
+},
+
+computed: {
+    userList () {
+        if(this.searchValue.trim().length > 0) {
+            return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.searchValue.trim().toLowerCase()))
+        }
+        return this.contacts
     }
+}
     
 }).mount('#app')
