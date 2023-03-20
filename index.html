@@ -11,7 +11,7 @@
 </head>
 
 
-<body>
+<body :class="{'dark-mode': toggleDark}">
 
     <div id="app" class="main-container">
         <div class="main">
@@ -66,6 +66,7 @@
                             <p>{{contacts[activeIndex].lastAccess}}</p>
                         </div>
                     </div>
+                    <div @click="toggleDarkMode()" :class="{'toggle-active': toggleDark}" class="toggle"></div>
                     <ul class="right-icons">
                         <li><i class="fa-solid fa-magnifying-glass"></i></li>
                         <li><i class="fa-solid fa-paperclip"></i></li>

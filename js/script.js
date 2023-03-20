@@ -180,11 +180,14 @@ createApp({
         ],
         
         activeIndex: 0,
+        // rimozione notifiche
         isRemoved: false,
-        
         // nuovo messaggio 
         newMessage: '',
+        // ricerca contatti
         searchValue: '',
+        // toggle dark mode
+        toggleDark: false,
     }   
 },
 
@@ -195,9 +198,13 @@ methods: {
     
     removeNotification() {
         this.isRemoved = true;
-      },
+    },
+
+    toggleDarkMode() {
+        this.toggleDark = !this.toggleDark;
+    },
       
-      addNewMessage() {
+    addNewMessage() {
           
           const pushText = {
               date: '10/01/2020 15:50:00',
@@ -217,12 +224,12 @@ methods: {
                 this.newMessage = '';   
             }
             
-        },
+    },
         
         
-        addResponse() {
+    addResponse() {
             
-            setTimeout(() => {
+        setTimeout(() => {
 
                 const response = {
                     date: '10/01/2020 15:50:01',
@@ -234,14 +241,9 @@ methods: {
                 this.contacts[this.activeIndex].messages.push(response);
 
                 
-            }, 1000);
-        },
+        }, 1000);
+    },
         
-        // filteredList() {
-        //     return contacts.name.filter((contact) =>
-        //     contact.toLowercase().includes(input.value.toLowercase())
-        //     );
-        // }
 },
 
 computed: {
