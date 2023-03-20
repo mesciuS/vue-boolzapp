@@ -188,6 +188,8 @@ createApp({
         searchValue: '',
         // toggle dark mode
         toggleDark: false,
+        // toggla font size
+        toggleFont: false,
     }   
 },
 
@@ -202,6 +204,10 @@ methods: {
 
     toggleDarkMode() {
         this.toggleDark = !this.toggleDark;
+    },
+
+    toggleFontSize() {
+        this.toggleFont = !this.toggleFont;
     },
       
     addNewMessage() {

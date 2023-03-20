@@ -14,7 +14,7 @@
 <body  id="app">
 
     <div class="main-container" :class="{'dark-mode': toggleDark}">
-        <div class="main">
+        <div class="main" :class="{'font-size': toggleFont}">
             <div class="mainleft">
                 <div class="left-header">
                     <div class="my-img">
@@ -68,6 +68,7 @@
                     </div>
                     <div @click="toggleDarkMode()" :class="{'toggle-active': toggleDark}" class="toggle"></div>
                     <ul class="right-icons">
+                        <li @click="toggleFontSize()"><i class="fa-solid fa-font"></i></li>
                         <li><i class="fa-solid fa-magnifying-glass"></i></li>
                         <li><i class="fa-solid fa-paperclip"></i></li>
                         <li><i class="fa-solid fa-ellipsis-vertical"></i></li>

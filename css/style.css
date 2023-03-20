@@ -10,6 +10,10 @@
     color: white !important;
 }
 
+.font-size {
+    font-size: 1.2em;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -26,6 +30,8 @@
     max-width: 100%;
     height: calc(100vh - 40px);
     background-color: white;
+    transition: all 0.3s ease-in-out;
+
 }
 
 .main .mainleft {
@@ -239,6 +245,7 @@
     font-size: 1.4em;
     gap: 20px;
     color: #b1b1b1;
+    cursor: pointer;
 }
 
 .main-chat {
