@@ -5,13 +5,9 @@
     font-family: sans-serif;
 }
 
-body {
-    transition: all 0.3s ease-in-out;
-}
-
-body.dark-mode {
-    background-color: #171918;
-    color: crimson;
+.dark-mode {
+    background: #2b2a33 !important;
+    color: white !important;
 }
 
 .main-container {
@@ -20,6 +16,7 @@ body.dark-mode {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
+    transition: all 0.3s ease-in-out;
 }
 
 
